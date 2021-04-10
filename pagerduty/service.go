@@ -58,6 +58,12 @@ type Integration struct {
 	Vendor           *VendorReference  `json:"vendor,omitempty"`
 }
 
+// AlertGroupingRules contains settings for Content-Based Alert Grouping
+type AlertGroupingRules struct {
+	Aggregate string   `json:"aggregate,omitempty"`
+	Fields    []string `json:"fields,omitempty"`
+}
+
 // Service represents a service.
 type Service struct {
 	AcknowledgementTimeout *int                       `json:"acknowledgement_timeout"`
@@ -65,6 +71,7 @@ type Service struct {
 	AlertCreation          string                     `json:"alert_creation,omitempty"`
 	AlertGrouping          *string                    `json:"alert_grouping"`
 	AlertGroupingTimeout   *int                       `json:"alert_grouping_timeout,omitempty"`
+	AlertGroupingRules     *AlertGroupingRules        `json:"alert_grouping_rules,omitempty"`
 	AutoResolveTimeout     *int                       `json:"auto_resolve_timeout"`
 	CreatedAt              string                     `json:"created_at,omitempty"`
 	Description            string                     `json:"description,omitempty"`
